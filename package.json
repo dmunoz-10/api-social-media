@@ -9,7 +9,7 @@
     "dev": "ts-node-dev --respawn --transpile-only --deps --clear src/app.ts",
     "format": "prettier --config .prettierrc.json --write src/**/*.ts",
     "prepare": "husky install",
-    "check:style": "pretty-quick --staged",
+    "lint": "pretty-quick --staged",
     "test": "jest"
   },
   "dependencies": {
