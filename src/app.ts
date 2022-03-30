@@ -1,4 +1,5 @@
 import express, { Application } from 'express'
+import './config/database'
 import { port } from './config/env'
 import logger from './config/logger'
 
