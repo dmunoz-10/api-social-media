@@ -10,7 +10,7 @@
     "format": "prettier --config .prettierrc.json --write src/**/*.ts",
     "prepare": "husky install",
     "lint": "pretty-quick --staged",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "engines": {
     "node": "16.14.2",
