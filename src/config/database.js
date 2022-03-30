@@ -1,16 +1,20 @@
-import { databaseHost, databaseName, databaseUsername, databasePassword } from './env'
-import { Options } from 'sequelize'
+// Load env variables
+require('dotenv').config()
 
-interface config {
-  [key: string]: Options
-}
+// Database Config
+const databaseHost = process.env.DATABASE_HOST || 'localhost'
+const databasePort = parseInt(process.env.DATABASE_PORT, 10) || 5432
+const databaseName = process.env.DATABASE_NAME || 'api_social_media'
+const databaseUsername = process.env.DATABASE_USERNAME || ''
+const databasePassword = process.env.DATABASE_PASSWORD || ''
 
-export default <config>{
+module.exports = {
   development: {
     username: databaseUsername,
     password: databasePassword,
     database: `${databaseName}_development`,
     host: databaseHost,
+    port: databasePort,
     dialect: 'postgres',
   },
   test: {
@@ -18,6 +22,7 @@ export default <config>{
     password: databasePassword,
     database: `${databaseName}_test`,
     host: databaseHost,
+    port: databasePort,
     dialect: 'postgres',
   },
   production: {
@@ -25,6 +30,7 @@ export default <config>{
     password: databasePassword,
     database: `${databaseName}_production`,
     host: databaseHost,
+    port: databasePort,
     dialect: 'postgres',
   },
 }
